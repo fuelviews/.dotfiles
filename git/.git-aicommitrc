@@ -1,0 +1,24 @@
+export default {
+    openAiKey: process.env.OPENAI_API_KEY,
+    autocommit: true,
+    openCommitTextEditor: false,
+    language: 'english',
+    systemMessagePromptTemplate: '' +
+        'You are expert AI, your job is to write clear and concise Git commit messages. ' +
+        'Your responsibility is to ensure that these messages accurately describe the changes made in each commit ' +
+        'and follow established guidelines. ' +
+        'Write exactly one sentence, and ensure the commit message does not exceed 45 characters in length. ' +
+        'Output only the commit message without comments or other text.',
+    humanPromptTemplate: '' +
+        'Read the following git diff for multiple files, then ' +
+        'write one sentence describing the changes without mentioning lines or files. ' +
+        'The sentence must not exceed 45 characters:\n' +
+        '{diff}',
+    excludeFromDiff: [
+        '*.lock', '*.lockb', '*-lock.json', '*-lock.yaml', '*.css', '*.js'
+    ],
+    diffFilter: 'ACMRTUXB',
+    modelName: "o1-preview",
+    temperature: 0.0,
+    maxTokens: 32000,
+}

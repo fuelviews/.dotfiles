@@ -36,6 +36,8 @@ alias python=python3
 
 alias browser='open "https://$(basename $PWD).test"'
 
+alias gai='git add . && git-aicommit && git push'
+
 alias artisan="${HOME}/Library/Application Support/Herd/bin/php artisan"
 
 func killwarp() {
@@ -45,8 +47,6 @@ func killwarp() {
 func startwarp() {
   open /Applications/Cloudflare\ WARP.app
 }
-
-alias gai='git add . && git-aicommit && git push'
 
 # Function to detect and use the appropriate code editor
 code_editor() {

@@ -1,7 +1,7 @@
 export default {
     openAiKey: process.env.OPENAI_API_KEY,
-    autocommit: true,
-    openCommitTextEditor: false,
+    autocommit: false,
+    openCommitTextEditor: true,
     language: 'english',
     systemMessagePromptTemplate: '' +
         'You are expert AI, your job is to write clear and concise Git commit messages. ' +

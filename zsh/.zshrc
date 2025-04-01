@@ -19,7 +19,7 @@ alias gcob='git branch | fzf | xargs git checkout'
 # cat -> bat
 #alias cat='bat'
 # colored ls output
-alias ls='ls -a --color'
+alias ls='ls -al --color'
 
 alias python=python3
 
@@ -96,3 +96,5 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 plugins=(git git-extras gh httpie iterm2 macos ssh zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat brew composer laravel symfony npm node command-not-found colored-man-pages )
 
 source $ZSH/oh-my-zsh.sh
+
+alias ls='ls -a --color'

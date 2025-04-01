@@ -19,7 +19,7 @@ export default {
         '*.lock', '*.lockb', '*-lock.json', '*-lock.yaml', '*.css', '*.js'
     ],
     diffFilter: 'ACMRTUXB',
-    modelName: "4.5-preview",
-    temperature: 0.0,
+    modelName: "o1-mini",
+    temperature: 0.50,
     maxTokens: 32000,
 }

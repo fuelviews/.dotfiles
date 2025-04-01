@@ -41,12 +41,13 @@ done
 
 packages=(
   git-aicommit
+  @dqbd/tiktoken
   svgo
 )
 for package in "${packages[@]}"; do
   if ! npm -g list "$package" &>/dev/null; then
     echo "Installing $package..."
-    npm install -g "$package"
+    npm i -g "$package"
   else
     echo "$package already installed, skipping..."
   fi

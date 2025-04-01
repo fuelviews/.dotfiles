@@ -1,7 +1,7 @@
 export default {
     openAiKey: process.env.OPENAI_API_KEY,
     autocommit: false,
-    openCommitTextEditor: true,
+    openCommitTextEditor: false,
     language: 'english',
     systemMessagePromptTemplate: '' +
         'You are expert AI, your job is to write clear and concise Git commit messages. ' +
@@ -18,7 +18,7 @@ export default {
         '*.lock', '*.lockb', '*-lock.json', '*-lock.yaml', '*.css', '*.js'
     ],
     diffFilter: 'ACMRTUXB',
-    modelName: "o1-preview",
+    modelName: "4.5-preview",
     temperature: 0.0,
     maxTokens: 32000,
 }

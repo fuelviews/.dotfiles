@@ -1,21 +1,31 @@
-# Export nvm completion settings for lukechilds/zsh-nvm plugin
-# Note: This must be exported before the plugin is bundled
-export NVM_DIR=${HOME}/.nvm
-export NVM_COMPLETION=true
-
 # Source secrets file if it exists
-[[ -f ${HOME}/.my_dirty_little_secrets ]] && source ${HOME}/.secrets
+[[ -f ${HOME}/.secrets ]] && source ${HOME}/.secrets
 
-source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# List out all globally installed npm packages
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
+
+# ==================
+# ALIASES AND FUNCTIONS
+# ==================
+
 alias list-npm-globals='npm list -g --depth=0'
 # checkout branch using fzf
 alias gcob='git branch | fzf | xargs git checkout'
 # cat -> bat
-alias cat='bat'
+#alias cat='bat'
 # colored ls output
-alias ls='ls -al --color'
+alias ls='ls -a --color'
+
+alias python=python3
+
+alias browser='open "https://$(basename $PWD).test"'
+
+alias gai='git add . && git-aicommit'
 
 # DIRCOLORS (MacOS)
 export CLICOLOR=1
@@ -29,18 +39,6 @@ export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --border --margin=1 --pad
 # export PATH=${PATH}:${HOME}/go/bin
 
 export BAT_THEME="gruvbox-dark"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
-
-alias python=python3
-
-alias browser='open "https://$(basename $PWD).test"'
-
-alias gai='git add . && git-aicommit && git push'
-
-alias artisan="${HOME}/Library/Application Support/Herd/bin/php artisan"
 
 func killwarp() {
   killall Cloudflare\ WARP
@@ -73,5 +71,28 @@ unalias code 2>/dev/null || true
 # Create the alias to use our function
 alias code="code_editor ."
 
-# Herd injected PHP binary.
-export PATH="${HOME}/Library/Application Support/Herd/bin/":$PATH
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time Oh My Zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# Uncomment the following line to use case-sensitive completion.
+CASE_SENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git git-extras gh httpie iterm2 macos ssh zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat brew composer laravel symfony npm node command-not-found colored-man-pages )
+
+source $ZSH/oh-my-zsh.sh

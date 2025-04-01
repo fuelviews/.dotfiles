@@ -40,13 +40,24 @@ for package in "${packages[@]}"; do
 done
 
 packages=(
-  git-aicommit
   svgo
 )
 for package in "${packages[@]}"; do
   if ! npm -g list "$package" &>/dev/null; then
     echo "Installing $package..."
     npm install -g "$package"
+  else
+    echo "$package already installed, skipping..."
+  fi
+done
+
+packages=(
+  git-aicommit
+)
+for package in "${packages[@]}"; do
+  if ! bun -g list "$package" &>/dev/null; then
+    echo "Installing $package..."
+    bun install -g "$package"
   else
     echo "$package already installed, skipping..."
   fi

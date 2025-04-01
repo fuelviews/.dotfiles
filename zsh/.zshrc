@@ -6,6 +6,8 @@ export NVM_COMPLETION=true
 # Source secrets file if it exists
 [[ -f ${HOME}/.my_dirty_little_secrets ]] && source ${HOME}/.my_dirty_little_secrets
 
+source $(brew --prefix nvm)/nvm.sh
+
 # List out all globally installed npm packages
 alias list-npm-globals='npm list -g --depth=0'
 # checkout branch using fzf

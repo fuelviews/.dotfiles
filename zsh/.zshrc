@@ -4,7 +4,7 @@ export NVM_DIR=${HOME}/.nvm
 export NVM_COMPLETION=true
 
 # Source secrets file if it exists
-[[ -f ${HOME}/.my_dirty_little_secrets ]] && source ${HOME}/.my_dirty_little_secrets
+[[ -f ${HOME}/.my_dirty_little_secrets ]] && source ${HOME}/.secrets
 
 source $(brew --prefix nvm)/nvm.sh
 

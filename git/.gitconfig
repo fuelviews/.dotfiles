@@ -6,6 +6,3 @@
 	autoSetupRemote = true
 [init]
 	defaultBranch = main
-[user]
-	name = Joshua Mitchener
-	email = thejmitchener@gmail.com

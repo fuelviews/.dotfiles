@@ -6,4 +6,4 @@
 4. Update variables in ```nano ~/.secrets``` dotfile
 5. Open up a new window to initiate `zsh` shell
 
-You can push to the repositories, but please remove any herd php appendages before committing ```nano ~/.zshrc```.
+You can push to the repository, but please remove any herd php appendages before committing ```nano ~/.zshrc```.

@@ -94,3 +94,11 @@ unalias code 2>/dev/null || true
 alias code="code_editor ."
 
 alias ls='ls -a --color'
+
+# Set Git config from environment variables
+if [[ -n "$GIT_NAME" && -n "$GIT_EMAIL" ]]; then
+  git config --global user.name "$GIT_NAME"
+  git config --global user.email "$GIT_EMAIL"
+fi
+
+

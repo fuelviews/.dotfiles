@@ -94,4 +94,3 @@ unalias code 2>/dev/null || true
 alias code="code_editor ."
 
 alias ls='ls -a --color'
-

@@ -72,3 +72,5 @@ TODO.md
 
 # Ignore oh-my-zsh custom plugins
 ~/.oh-my-zsh/custom/plugins
+
+.gitconfig.local

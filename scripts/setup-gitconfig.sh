@@ -16,7 +16,7 @@ if [[ -z "$GIT_NAME" || -z "$GIT_EMAIL" ]]; then
 fi
 
 # Write ~/.gitconfig.local
-cat <<EOF > ~/.gitconfig.local
+cat <<EOF > ~/.dotfiles/git/.gitconfig.local
 [user]
     name = $GIT_NAME
     email = $GIT_EMAIL

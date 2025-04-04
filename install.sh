@@ -126,18 +126,5 @@ echo -e "${GREEN}Setting up Git configuration...${NC}"
 read -p "Enter your Git name: " GIT_NAME
 read -p "Enter your Git email: " GIT_EMAIL
 
-# Update .secrets file if values are provided
-if [[ -n "$GIT_NAME" && -n "$GIT_EMAIL" ]]; then
-  if [ -f ~/.secrets ]; then
-    # Remove existing Git config if present
-    sed -i '' '/^export GIT_NAME=/d' ~/.secrets
-    sed -i '' '/^export GIT_EMAIL=/d' ~/.secrets
-  fi
-  # Append new Git config
-  echo "export GIT_NAME=\"$GIT_NAME\"" >> ~/.secrets
-  echo "export GIT_EMAIL=\"$GIT_EMAIL\"" >> ~/.secrets
-  echo "Updated ~/.secrets with Git configuration"
-fi
-
 # Call the git config setup script with the provided inputs
 bash scripts/setup-gitconfig.sh "$GIT_NAME" "$GIT_EMAIL"
